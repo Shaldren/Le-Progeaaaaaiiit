@@ -1,4 +1,4 @@
-package bo;
+package com.example.leprogeaaaaaiiit.bo;
 
 public class personne {
 
@@ -12,14 +12,6 @@ public class personne {
     public personne() {
     }
 
-    public personne(String nom, String prenom, String adresse, String ville, int codePostal) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.ville = ville;
-        this.codePostal = codePostal;
-    }
-
     public personne(int id, String nom, String prenom, String adresse, String ville, int codePostal) {
         this.id = id;
         this.nom = nom;
@@ -27,6 +19,18 @@ public class personne {
         this.adresse = adresse;
         this.ville = ville;
         this.codePostal = codePostal;
+    }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", ville='" + ville + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                '}';
     }
 
     public int getId() {

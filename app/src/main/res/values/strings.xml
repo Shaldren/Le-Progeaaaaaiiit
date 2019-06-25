@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Le Progeaaaaaiiit</string>
+
+    <string name="label_name">Nom :</string>
+    <string name="hint_name">Nom</string>
+    <string name="label_surname">Prenom :</string>
+    <string name="hint_surname">Prenom</string>
+    <string name="label_address">Adresse :</string>
+    <string name="hint_address">Adresse</string>
+    <string name="label_city">Ville :</string>
+    <string name="hint_city">Ville</string>
+    <string name="label_postalcode">Code postal :</string>
+    <string name="hint_postalcode">Code postal</string>
+
+    <string name="label_environmenttype">Type environnement :</string>
+    <string name="hint_environmenttype">Type environnement</string>
+    <string name="label_brand">Marque :</string>
+    <string name="hint_brand">Marque</string>
+    <string name="label_model">Modèle :</string>
+    <string name="hint_model">Modèle</string>
+    <string name="label_priceperday">Prix par jour :</string>
+    <string name="hint_priceperday">Prix par jour</string>
+    <string name="label_matricul">Immatriculation :</string>
+    <string name="hint_matricul">Immatriculation</string>
+    <string name="label_picture">Image :</string>
+    <string name="hint_picture">Image</string>
+
 </resources>
