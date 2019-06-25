@@ -1,13 +1,12 @@
 package com.example.leprogeaaaaaiiit.bo;
 
-public class client extends personne
-{
+public class Client extends personne {
     private int idClient;
 
-    public client() {
+    public Client() {
     }
 
-    public client(int id, String nom, String prenom, String adresse, String ville, int codePostal, int idClient) {
+    public Client(int id, String nom, String prenom, String adresse, String ville, int codePostal, int idClient) {
         super(id, nom, prenom, adresse, ville, codePostal);
         this.idClient = idClient;
     }
