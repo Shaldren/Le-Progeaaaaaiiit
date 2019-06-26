@@ -25,4 +25,6 @@
     <string name="label_picture">Image :</string>
     <string name="hint_picture">Image</string>
 
+    <string name="exception_vehicule_form_get">STFU</string>
+
 </resources>

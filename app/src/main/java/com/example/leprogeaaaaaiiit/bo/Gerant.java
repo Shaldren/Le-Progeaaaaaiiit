@@ -1,14 +1,14 @@
 package com.example.leprogeaaaaaiiit.bo;
 
-public class gerant extends personne
+public class Gerant extends Personne
 {
     private int idGerant;
-    private agence agence;
+    private Agence agence;
 
-    public gerant() {
+    public Gerant() {
     }
 
-    public gerant(int id, String nom, String prenom, String adresse, String ville, int codePostal, int idGerant, com.example.leprogeaaaaaiiit.bo.agence agence) {
+    public Gerant(int id, String nom, String prenom, String adresse, String ville, int codePostal, int idGerant, Agence agence) {
         super(id, nom, prenom, adresse, ville, codePostal);
         this.idGerant = idGerant;
         this.agence = agence;
@@ -22,11 +22,11 @@ public class gerant extends personne
         this.idGerant = idGerant;
     }
 
-    public com.example.leprogeaaaaaiiit.bo.agence getAgence() {
+    public Agence getAgence() {
         return agence;
     }
 
-    public void setAgence(com.example.leprogeaaaaaiiit.bo.agence agence) {
+    public void setAgence(Agence agence) {
         this.agence = agence;
     }
 }

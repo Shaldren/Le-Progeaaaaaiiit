@@ -1,6 +1,6 @@
 package com.example.leprogeaaaaaiiit.bo;
 
-public class personne {
+public class Personne {
 
     private int id;
     private String nom;
@@ -9,10 +9,10 @@ public class personne {
     private String ville;
     private int codePostal;
 
-    public personne() {
+    public Personne() {
     }
 
-    public personne(int id, String nom, String prenom, String adresse, String ville, int codePostal) {
+    public Personne(int id, String nom, String prenom, String adresse, String ville, int codePostal) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;

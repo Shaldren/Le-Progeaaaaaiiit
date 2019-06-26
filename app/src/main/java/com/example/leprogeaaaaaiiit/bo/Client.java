@@ -1,6 +1,6 @@
 package com.example.leprogeaaaaaiiit.bo;
 
-public class Client extends personne {
+public class Client extends Personne {
     private int idClient;
 
     public Client() {

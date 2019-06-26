@@ -46,13 +46,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/label_model"
-        app:layout_constraintEnd_toStartOf="@+id/edtDescription"
+        app:layout_constraintEnd_toStartOf="@+id/edtMarque"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtModel" />
 
     <EditText
-        android:id="@+id/edtDescription"
+        android:id="@+id/edtMarque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -75,10 +75,10 @@
         android:layout_marginTop="24dp"
         android:text="@string/label_environmenttype"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMarque" />
 
     <EditText
-        android:id="@+id/edtUrl"
+        android:id="@+id/edtType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -87,7 +87,7 @@
         android:ems="10"
         android:hint="@string/hint_environmenttype"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/edtMarque" />
 
     <TextView
         android:id="@+id/textView4"
@@ -98,7 +98,7 @@
         android:layout_marginTop="24dp"
         android:text="@string/label_priceperday"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUrl" />
+        app:layout_constraintTop_toBottomOf="@+id/edtType" />
 
     <EditText
         android:id="@+id/edtPrix"
@@ -113,7 +113,7 @@
         android:hint="@string/hint_priceperday"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUrl" />
+        app:layout_constraintTop_toBottomOf="@+id/edtType" />
 
     <TextView
         android:id="@+id/textView5"

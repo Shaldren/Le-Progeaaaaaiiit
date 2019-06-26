@@ -1,8 +1,8 @@
 package com.example.leprogeaaaaaiiit.bo;
 
-public class vehicule
+public class Vehicule
 {
-    private int id;
+    private long id;
     private String typeEnvironnement;
     private String marque;
     private String modele;
@@ -10,10 +10,10 @@ public class vehicule
     private String immatriculation;
     private String image;
 
-    public vehicule() {
+    public Vehicule() {
     }
 
-    public vehicule(int id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
+    public Vehicule(int id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
         this.id = id;
         this.typeEnvironnement = typeEnvironnement;
         this.marque = marque;
@@ -25,7 +25,7 @@ public class vehicule
 
     @Override
     public String toString() {
-        return "vehicule{" +
+        return "Vehicule{" +
                 "id=" + id +
                 ", typeEnvironnement='" + typeEnvironnement + '\'' +
                 ", marque='" + marque + '\'' +
@@ -36,11 +36,11 @@ public class vehicule
                 '}';
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
