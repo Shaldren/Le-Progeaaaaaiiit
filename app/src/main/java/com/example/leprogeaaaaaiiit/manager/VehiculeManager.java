@@ -1,5 +1,6 @@
 package com.example.leprogeaaaaaiiit.manager;
 
+import android.arch.persistence.db.SimpleSQLiteQuery;
 import android.content.SharedPreferences;
 
 import com.example.leprogeaaaaaiiit.application.LeProgeaaaaaiiitApplication;
