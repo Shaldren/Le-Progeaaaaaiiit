@@ -1,5 +1,6 @@
 package com.example.leprogeaaaaaiiit.dal.impls;
 
+import android.arch.persistence.db.SupportSQLiteQuery;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -66,6 +67,11 @@ public class ClientDAOsql implements ClientDAO {
         db.close();
 
         return lst;
+    }
+
+    @Override
+    public List<Client> findAll(SupportSQLiteQuery query) {
+        return null;
     }
 
     private Client getClient(Cursor c) {

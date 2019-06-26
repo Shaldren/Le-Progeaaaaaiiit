@@ -1,5 +1,7 @@
 package com.example.leprogeaaaaaiiit.dal.impls;
 
+import android.arch.persistence.db.SupportSQLiteQuery;
+
 import com.example.leprogeaaaaaiiit.dal.ClientDAO;
 
 
@@ -23,6 +25,11 @@ public class ClientDAOImpl implements ClientDAO {
     @Override
     public List<Client> findAll() {
         return this.clients;
+    }
+
+    @Override
+    public List<Client> findAll(SupportSQLiteQuery query) {
+        return null;
     }
 
     @Override
