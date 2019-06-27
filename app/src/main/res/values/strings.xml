@@ -31,7 +31,18 @@
     <string name="label_mdp">Mot de passe :</string>
     <string name="hint_mdp">Mot de Passe</string>
 
+    <string name="menu_ajouter">Ajouter</string>
+    <string name="menu_configuration">Configuration</string>
+    <string name="menu_modifier">Modifier</string>
+    <string name="menu_envoyer">Envoyer</string>
+
     <string name="exception_vehicule_form_get">STFU</string>
     <string name="msg_update_vehicule">Mise à jour du véhicule</string>
 
+    <string name="msg_demande_permission_snackbar">Pour accéder aux contacts, veuillez accepter la permission</string>
+
+    <string name="ok">OUIOUIOUIOUIOUIOUIOUI</string>
+    <string name="nok">No U</string>
+    <string name="title_alert_quit">Tu dégage ?</string>
+    <string name="msg_alert_quit">T\'es sûr que tu veux dégager ?</string>
 </resources>

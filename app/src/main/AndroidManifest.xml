@@ -6,21 +6,21 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".adapter.CustomApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".VehiculeUpdateActivity"></activity>
-        <activity android:name=".VehiculeInsertActivity" >
+        <activity android:name=".VehiculeInsertActivity" ></activity>
+        <activity android:name=".VehiculeListActivity" />
+        <activity android:name=".VehiculeDetailActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".VehiculeListActivity" />
-        <activity android:name=".VehiculeDetailActivity" />
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 

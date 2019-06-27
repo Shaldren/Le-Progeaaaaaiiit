@@ -11,6 +11,7 @@ import com.example.leprogeaaaaaiiit.application.LeProgeaaaaaiiitApplication;
 import com.example.leprogeaaaaaiiit.bo.Vehicule;
 import com.example.leprogeaaaaaiiit.dal.VehiculeDAO;
 import com.example.leprogeaaaaaiiit.dal.contracts.LeProgeaaaaaiiitRoom;
+import com.example.leprogeaaaaaiiit.dal.impls.DatabaseRoom;
 
 import java.util.List;
 

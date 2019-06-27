@@ -18,7 +18,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginForm form;
 
-    public void insertVehiculeClick(View view){
+    
+
+    public void LoginClick(View view){
         List<String> errors = new ArrayList<>();
         String error = null;
 
