@@ -1,5 +1,6 @@
 package com.example.leprogeaaaaaiiit.manager;
 
+import android.app.Application;
 import android.arch.persistence.db.SimpleSQLiteQuery;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -9,7 +10,7 @@ import android.content.SharedPreferences;
 import com.example.leprogeaaaaaiiit.application.LeProgeaaaaaiiitApplication;
 import com.example.leprogeaaaaaiiit.bo.Vehicule;
 import com.example.leprogeaaaaaiiit.dal.VehiculeDAO;
-import com.example.leprogeaaaaaiiit.dal.impls.DatabaseRoom;
+import com.example.leprogeaaaaaiiit.dal.contracts.LeProgeaaaaaiiitRoom;
 
 import java.util.List;
 
