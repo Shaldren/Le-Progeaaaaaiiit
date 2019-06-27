@@ -1,11 +1,16 @@
 package com.example.leprogeaaaaaiiit;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.leprogeaaaaaiiit.bo.Vehicule;
@@ -16,15 +21,18 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private LoginForm form;
 
-    
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+    }
 
     public void LoginClick(View view){
         List<String> errors = new ArrayList<>();
-        String error = null;
-
-        if(this.form.checkForm(errors)){
+        EditText edLogin = findViewById(R.id.edtUtilisateur);
+        EditText edMdp = findViewById(R.id.edtMdp);
+        if(LoginForm.checkForm(edLogin,edMdp)){
             this.startActivity(new Intent(this, VehiculeListActivity.class));
         }
     }

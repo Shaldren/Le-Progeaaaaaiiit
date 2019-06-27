@@ -34,7 +34,6 @@ public class VehiculeInsertActivity extends AppCompatActivity {
 
     public void insertVehiculeClick(View view){
         List<String> errors = new ArrayList<>();
-        String error = null;
 
         if(this.form.checkForm(errors)){
             this.form.saveOrUpdate(new InsertHandler());
