@@ -1,6 +1,7 @@
 package com.example.leprogeaaaaaiiit.dal;
 
 import android.arch.persistence.db.SupportSQLiteQuery;
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -11,22 +12,22 @@ import android.arch.persistence.room.Update;
 import com.example.leprogeaaaaaiiit.bo.Client;
 import java.util.List;
 
+@Dao
 public interface ClientDAO {
 
-    @Query("SELECT * FROM CLIENT LIMIT 1")
-    public Client getFirst();
+    @Query("SELECT * FROM client")
+    List<Client> getAll();
 
-    @Query("SELECT * FROM CLIENT")
-    public List<Client> findAll();
-    @RawQuery
-    public List<Client> findAll(SupportSQLiteQuery query);
+    @Query("SELECT * FROM client WHERE idClient IN (:idClient)")
+    List<Client> loadAllByIds(int[] idClient);
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public boolean insert(Client client);
+    @Query("SELECT * FROM client WHERE nom LIKE :first AND " +
+            "prenom LIKE :last LIMIT 1")
+    Client findByName(String first, String last);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    public boolean update(Client client);
+    @Insert
+    void insertAll(Client... clients);
 
     @Delete
-    public boolean delete(Client client);
+    void delete(Client client);
 }

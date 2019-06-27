@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.leprogeaaaaaiiit.R;
+import com.example.leprogeaaaaaiiit.VehiculeInsertActivity;
+import com.example.leprogeaaaaaiiit.application.LeProgeaaaaaiiitApplication;
 import com.example.leprogeaaaaaiiit.bo.Vehicule;
 import com.example.leprogeaaaaaiiit.manager.VehiculeManager;
 
@@ -28,17 +30,18 @@ public class VehiculeForm {
     private EditText immatriculation;
     private ImageView image;
     private boolean isCheck = false;
+    VehiculeManager vm;
 
-    public VehiculeForm(Context context, Vehicule vehicule) {
-        this.context = context;
+    public VehiculeForm(Activity activity, Vehicule vehicule) {
+        this.context = activity;
         this.vehicule = vehicule;
-        Activity activity = ((Activity) context);
         marque = activity.findViewById(R.id.edtMarque);
         modele = activity.findViewById(R.id.edtModel);
         type = activity.findViewById(R.id.edtType);
         prixParJour = activity.findViewById(R.id.edtPrix);
         immatriculation = activity.findViewById(R.id.edtMatricul);
         image = activity.findViewById(R.id.imageView);
+        vm = new VehiculeManager(activity);
     }
 
     public void chargeVehicule(){
@@ -96,7 +99,7 @@ public class VehiculeForm {
             Vehicule v = this.getVehicule();
 
             if(v.getId() > 0){
-                r = VehiculeManager.update(v);
+                vm.insert(v);
             }
         }
         catch (InvalidParameterException e){
@@ -122,7 +125,7 @@ public class VehiculeForm {
         }
     }
 
-    private static class InsertOrUpdateTask
+    private class InsertOrUpdateTask
             extends AsyncTask<Vehicule, Void, Boolean> {
 
         private Handler handler;
@@ -130,19 +133,15 @@ public class VehiculeForm {
         @Override
         protected Boolean doInBackground(Vehicule... vehicules) {
 
-            boolean r;
-
             Vehicule v = vehicules[0];
             Log.i("TAG_AND", v.toString());
             if(v.getId() > 0){
-                r = VehiculeManager.update(v);
+                vm.update(vehicule);
             }
             else{
-                r = VehiculeManager.insert(v);
+                vm.insert(vehicule);
             }
-
-            return r;
-
+            return true;
         }
 
         @Override

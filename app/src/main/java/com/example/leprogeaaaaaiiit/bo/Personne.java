@@ -1,5 +1,8 @@
 package com.example.leprogeaaaaaiiit.bo;
 
+import android.arch.persistence.room.Entity;
+import android.os.Parcelable;
+
 public class Personne {
 
     private int id;

@@ -10,15 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".VehiculeUpdateActivity"></activity>
-        <activity android:name=".VehiculeInsertActivity" />
-        <activity android:name=".VehiculeListActivity" />
-        <activity android:name=".VehiculeDetailActivity" />
-        <activity android:name=".bo.MainActivity">
+        <activity android:name=".VehiculeInsertActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".VehiculeListActivity" />
+        <activity android:name=".VehiculeDetailActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

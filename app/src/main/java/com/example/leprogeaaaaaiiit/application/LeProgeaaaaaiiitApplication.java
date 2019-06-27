@@ -9,6 +9,7 @@ public class LeProgeaaaaaiiitApplication extends Application {
 
     public final static String CONFIGURATION_PREF = "configuration";
     public final static String INTENT_CLIENT = "client";
+    public final static String INTENT_VEHICULE = "vehicule";
 
     @Override
     public void onCreate() {

@@ -20,132 +20,29 @@ import java.util.List;
 
 public class ClientDAOsql implements ClientDAO {
 
-    private LeProgeaaaaaiiitHelper helper;
-    private Context context;
-
-    public ClientDAOsql(Context context)
-    {
-        this.helper = new LeProgeaaaaaiiitHelper(context);
-
-        this.context = context;
-    }
 
     @Override
-    public Client getFirst() {
+    public List<Client> getAll() {
         return null;
     }
 
     @Override
-    public List<Client> findAll() {
-
-        List<Client> lst = new ArrayList<>();
-        SharedPreferences pref = context.getSharedPreferences(LeProgeaaaaaiiitApplication.CONFIGURATION_PREF, Context.MODE_PRIVATE);
-
-        String where = null;
-
-        String order = null;
-
-        SQLiteDatabase db = helper.getReadableDatabase();
-
-        Cursor c = db.query(
-                ClientContract.TABLE_NAME,
-                null,
-                where,
-                null,
-                null,
-                null,
-                order,
-                null
-        );
-
-        while(c.moveToNext()){
-            lst.add(this.getClient(c));
-        }
-
-        c.close();
-
-        db.close();
-
-        return lst;
-    }
-
-    @Override
-    public List<Client> findAll(SupportSQLiteQuery query) {
+    public List<Client> loadAllByIds(int[] idClient) {
         return null;
     }
 
-    private Client getClient(Cursor c) {
+    @Override
+    public Client findByName(String first, String last) {
+        return null;
+    }
 
-        Client client = new Client(
-            c.getInt(c.getColumnIndex(ClientContract.COL_ID)),
-            c.getString(c.getColumnIndex(ClientContract.COL_NOM)),
-            c.getString(c.getColumnIndex(ClientContract.COL_PRENOM)),
-            c.getString(c.getColumnIndex(ClientContract.COL_ADRESSE)),
-            c.getString(c.getColumnIndex(ClientContract.COL_VILLE)),
-            c.getInt(c.getColumnIndex(ClientContract.COL_CP)),
-            c.getInt(c.getColumnIndex(ClientContract.COL_IDCLIENT))
-
-        );
-
-        return  client;
+    @Override
+    public void insertAll(Client... clients) {
 
     }
 
     @Override
-    public boolean insert(Client client) {
+    public void delete(Client client) {
 
-        ContentValues values = this.getContents(client);
-
-        Log.i("LEPROGEAAAAAIIIT", values.toString());
-        SQLiteDatabase db = helper.getWritableDatabase();
-
-        long id = db.insert(ClientContract.TABLE_NAME,null,values);
-
-        client.setId((int) id);
-
-        db.close();
-
-        return id > 0;
-    }
-
-    @Override
-    public boolean update(Client client) {
-        ContentValues values = this.getContents(client);
-        String selection = ClientContract.COL_ID + " = ?";
-        String[] selectionArgs = { String.valueOf(client.getId()) };
-        SQLiteDatabase db = helper.getWritableDatabase();
-        int count = db.update(ClientContract.TABLE_NAME, values, selection, selectionArgs);
-        db.close();
-        return count > 0;
-    }
-
-    @Override
-    public boolean delete(Client client) {
-        String selection = ClientContract.COL_ID + " = ?";
-
-        String[] selectionArgs = { String.valueOf(client.getId()) };
-        SQLiteDatabase db = helper.getWritableDatabase();
-        int deletedRows = db.delete(ClientContract.TABLE_NAME, selection, selectionArgs);
-        db.close();
-        return deletedRows > 0;
-    }
-
-    /**
-     *
-     * @param client
-     * @return
-     */
-    private ContentValues getContents(Client client){
-        ContentValues values = new ContentValues();
-
-        values.put(ClientContract.COL_NOM, client.getNom());
-        values.put(ClientContract.COL_PRENOM, client.getPrenom());
-        values.put(ClientContract.COL_ADRESSE, client.getAdresse());
-        values.put(ClientContract.COL_VILLE, client.getVille());
-        values.put(ClientContract.COL_CP, client.getCodePostal());
-        values.put(ClientContract.COL_IDCLIENT, client.getIdClient());
-
-
-        return values;
     }
 }

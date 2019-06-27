@@ -1,7 +1,16 @@
 package com.example.leprogeaaaaaiiit.bo;
 
-public class Vehicule
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+@Entity
+public class Vehicule implements Parcelable
 {
+
+    @PrimaryKey(autoGenerate = true)
     private long id;
     private String typeEnvironnement;
     private String marque;
@@ -13,8 +22,17 @@ public class Vehicule
     public Vehicule() {
     }
 
-    public Vehicule(int id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
-        this.id = id;
+    /**
+     *
+     * @param typeEnvironnement
+     * @param marque
+     * @param modele
+     * @param prixParJour
+     * @param immatriculation
+     * @param image
+     */
+    @Ignore
+    public Vehicule(String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
         this.typeEnvironnement = typeEnvironnement;
         this.marque = marque;
         this.modele = modele;
@@ -22,6 +40,45 @@ public class Vehicule
         this.immatriculation = immatriculation;
         this.image = image;
     }
+
+    /**
+     *
+     * @param id
+     * @param typeEnvironnement
+     * @param marque
+     * @param modele
+     * @param prixParJour
+     * @param immatriculation
+     * @param image
+     */
+    @Ignore
+    public Vehicule(long id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
+        this(typeEnvironnement,marque,modele,prixParJour,immatriculation,image);
+        this.id = id;
+    }
+
+    @Ignore
+    public Vehicule(Parcel in) {
+        id = in.readLong();
+        typeEnvironnement = in.readString();
+        marque = in.readString();
+        modele = in.readString();
+        prixParJour = in.readLong();
+        immatriculation = in.readString();
+        image = in.readString();
+    }
+
+    public static final Creator<Vehicule> CREATOR = new Creator<Vehicule>() {
+        @Override
+        public Vehicule createFromParcel(Parcel in) {
+            return new Vehicule(in);
+        }
+
+        @Override
+        public Vehicule[] newArray(int size) {
+            return new Vehicule[size];
+        }
+    };
 
     @Override
     public String toString() {
@@ -90,5 +147,21 @@ public class Vehicule
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(marque);
+        dest.writeString(modele);
+        dest.writeString(typeEnvironnement);
+        dest.writeString(immatriculation);
+        dest.writeDouble(prixParJour);
+        dest.writeString(image);
     }
 }

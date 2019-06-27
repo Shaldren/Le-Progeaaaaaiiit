@@ -1,48 +1,40 @@
 package com.example.leprogeaaaaaiiit.manager;
 
 import android.arch.persistence.db.SimpleSQLiteQuery;
+import android.arch.persistence.room.Database;
+import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.example.leprogeaaaaaiiit.application.LeProgeaaaaaiiitApplication;
 import com.example.leprogeaaaaaiiit.bo.Vehicule;
-import com.example.leprogeaaaaaiiit.dal.DAOFactory;
 import com.example.leprogeaaaaaiiit.dal.VehiculeDAO;
+import com.example.leprogeaaaaaiiit.dal.impls.DatabaseRoom;
 
 import java.util.List;
 
-public abstract class VehiculeManager {
+public class VehiculeManager {
 
-    public static Vehicule getFirst(){
-        VehiculeDAO dao = DAOFactory.getVehiculeDAO();
-        return dao.getFirst();
+    DatabaseRoom db;
+
+    public VehiculeManager(Context ctx) {
+        db = Room.databaseBuilder(ctx,
+                DatabaseRoom.class, "LeProgeaaaaaiiitBdd").build();
     }
 
     public List<Vehicule> findAll(){
-        String query = "SELECT * FROM VEHICULE";
-
-        SharedPreferences pref = LeProgeaaaaaiiitApplication.getAppContext()
-                .getSharedPreferences(
-                        LeProgeaaaaaiiitApplication.CONFIGURATION_PREF,
-                        LeProgeaaaaaiiitApplication.getAppContext().MODE_PRIVATE
-                );
-
-        VehiculeDAO dao = DAOFactory.getVehiculeDAO();
-        return dao.findAll(new SimpleSQLiteQuery(query));
+        return db.getVehiculeDAO().getAll();
     }
 
-    public static boolean insert(Vehicule vehicule){
-        VehiculeDAO dao = DAOFactory.getVehiculeDAO();
-        return dao.insert(vehicule) > 0;
+    public void update(Vehicule vehicule){
+        db.getVehiculeDAO().update(vehicule);
     }
 
-    public static boolean update(Vehicule vehicule){
-        VehiculeDAO dao = DAOFactory.getVehiculeDAO();
-        return dao.update(vehicule) > 0;
+    public void insert(Vehicule vehicule){
+        db.getVehiculeDAO().insertAll(vehicule);
     }
 
-    public static boolean delete(Vehicule vehicule){
-        VehiculeDAO dao = DAOFactory.getVehiculeDAO();
-        return dao.delete(vehicule) > 0;
+    public void delete(Vehicule vehicule){
+        db.getVehiculeDAO().delete(vehicule);
     }
-
 }

@@ -19,7 +19,7 @@
             android:id="@+id/btnModifier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="updateArticleClick"
+            android:onClick="updateVehiculeClick"
             android:text="Modifier" />
     </LinearLayout>
 </LinearLayout>

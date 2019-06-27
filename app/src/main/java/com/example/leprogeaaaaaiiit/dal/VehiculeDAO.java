@@ -16,22 +16,23 @@ import java.util.List;
 @Dao
 public interface VehiculeDAO {
 
-    @Query("SELECT * FROM VEHICULE LIMIT 1")
-    public Vehicule getFirst();
+    @Query("SELECT * FROM vehicule")
+    List<Vehicule> getAll();
 
-    @Query("SELECT * FROM VEHICULE")
-    public List<Vehicule> findAll();
+    @Query("SELECT * FROM vehicule WHERE id IN (:id)")
+    List<Vehicule> loadAllByIds(int[] id);
 
-    @RawQuery
-    public List<Vehicule> findAll(SupportSQLiteQuery query);
+    @Query("SELECT * FROM vehicule WHERE marque LIKE :first AND " +
+            "modele LIKE :last LIMIT 1")
+    Vehicule findByName(String first, String last);
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public long insert(Vehicule vehicule);
+    @Insert
+    void insertAll(Vehicule... vehicules);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    public int update(Vehicule vehicule);
+    @Update
+    void update(Vehicule vehicule);
 
     @Delete
-    public int delete(Vehicule vehicule);
+    void delete(Vehicule vehicule);
 
 }
