@@ -73,4 +73,20 @@
             tools:text="Ville" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutswitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/switchdetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Loué" />
+
+    </LinearLayout>
 </LinearLayout>
