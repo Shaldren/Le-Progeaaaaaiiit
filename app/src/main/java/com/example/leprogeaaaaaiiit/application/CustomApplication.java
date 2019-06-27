@@ -1,4 +1,4 @@
-package com.example.leprogeaaaaaiiit.adapter;
+package com.example.leprogeaaaaaiiit.application;
 
 import android.app.Application;
 import android.arch.persistence.room.Room;

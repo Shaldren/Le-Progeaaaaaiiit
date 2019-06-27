@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText edLogin = findViewById(R.id.edtUtilisateur);
         EditText edMdp = findViewById(R.id.edtMdp);
         if(LoginForm.checkForm(edLogin,edMdp)){
-            this.startActivity(new Intent(this, VehiculeListActivity.class));
+            this.startActivity(new Intent(this, Menu_activity.class));
         }
     }
 

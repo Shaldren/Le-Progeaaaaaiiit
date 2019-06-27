@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.leprogeaaaaaiiit.adapter.VehiculeAdapter;
-import com.example.leprogeaaaaaiiit.adapter.CustomApplication;
+import com.example.leprogeaaaaaiiit.application.CustomApplication;
 import com.example.leprogeaaaaaiiit.application.LeProgeaaaaaiiitApplication;
 import com.example.leprogeaaaaaiiit.bo.Vehicule;
 import com.example.leprogeaaaaaiiit.manager.VehiculeManager;
