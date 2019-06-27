@@ -57,7 +57,7 @@ public class VehiculeDetailActivity extends AppCompatActivity {
         TextView modele = findViewById(R.id.txtModele);
         TextView prix = findViewById(R.id.txtPrix);
         TextView type = findViewById(R.id.txtType);
-        Switch loue = findViewById(R.id.switch1);
+        Switch loue = findViewById(R.id.switchdetail);
 
         marque.setText(vehicule.getMarque());
         modele.setText(vehicule.getModele());
