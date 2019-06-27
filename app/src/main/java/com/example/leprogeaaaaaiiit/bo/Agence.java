@@ -3,7 +3,7 @@ package com.example.leprogeaaaaaiiit.bo;
 import java.util.List;
 
 public class Agence {
-    private int id;
+    private long id;
     private String nom;
     private Gerant gerant;
     private List<Vehicule> Vehicules;
@@ -11,7 +11,7 @@ public class Agence {
     public Agence() {
     }
 
-    public Agence(int id, String nom, Gerant gerant, List<Vehicule> Vehicules) {
+    public Agence(long id, String nom, Gerant gerant, List<Vehicule> Vehicules) {
         this.id = id;
         this.nom = nom;
         this.gerant = gerant;
@@ -28,11 +28,11 @@ public class Agence {
                 '}';
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

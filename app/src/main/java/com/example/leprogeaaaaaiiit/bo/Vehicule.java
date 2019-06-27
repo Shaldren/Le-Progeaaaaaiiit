@@ -18,6 +18,7 @@ public class Vehicule implements Parcelable
     private double prixParJour;
     private String immatriculation;
     private String image;
+    private long idAgence;
 
     public Vehicule() {
     }
@@ -32,13 +33,14 @@ public class Vehicule implements Parcelable
      * @param image
      */
     @Ignore
-    public Vehicule(String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
+    public Vehicule(String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image, long idAgence) {
         this.typeEnvironnement = typeEnvironnement;
         this.marque = marque;
         this.modele = modele;
         this.prixParJour = prixParJour;
         this.immatriculation = immatriculation;
         this.image = image;
+        this.idAgence = idAgence;
     }
 
     /**
@@ -52,8 +54,8 @@ public class Vehicule implements Parcelable
      * @param image
      */
     @Ignore
-    public Vehicule(long id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image) {
-        this(typeEnvironnement,marque,modele,prixParJour,immatriculation,image);
+    public Vehicule(long id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image, long idAgence) {
+        this(typeEnvironnement,marque,modele,prixParJour,immatriculation,image,idAgence);
         this.id = id;
     }
 
@@ -66,6 +68,7 @@ public class Vehicule implements Parcelable
         prixParJour = in.readLong();
         immatriculation = in.readString();
         image = in.readString();
+        idAgence = in.readLong();
     }
 
     public static final Creator<Vehicule> CREATOR = new Creator<Vehicule>() {
@@ -90,6 +93,7 @@ public class Vehicule implements Parcelable
                 ", prixParJour=" + prixParJour +
                 ", immatriculation='" + immatriculation + '\'' +
                 ", image='" + image + '\'' +
+                ", agence='" + idAgence + '\'' +
                 '}';
     }
 
@@ -149,6 +153,14 @@ public class Vehicule implements Parcelable
         this.image = image;
     }
 
+    public long getIdAgence() {
+        return idAgence;
+    }
+
+    public void setIdAgence(long idAgence) {
+        this.idAgence = idAgence;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -163,5 +175,6 @@ public class Vehicule implements Parcelable
         dest.writeString(immatriculation);
         dest.writeDouble(prixParJour);
         dest.writeString(image);
+        dest.writeLong(idAgence);
     }
 }

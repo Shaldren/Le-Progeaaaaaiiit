@@ -2,31 +2,31 @@ package com.example.leprogeaaaaaiiit.bo;
 
 public class Gerant extends Personne
 {
-    private int idGerant;
-    private Agence agence;
+    private long idGerant;
+    private long idAgence;
 
     public Gerant() {
     }
 
-    public Gerant(int id, String nom, String prenom, String adresse, String ville, int codePostal, int idGerant, Agence agence) {
+    public Gerant(long id, String nom, String prenom, String adresse, String ville, String codePostal, long idGerant, long idAgence) {
         super(id, nom, prenom, adresse, ville, codePostal);
         this.idGerant = idGerant;
-        this.agence = agence;
+        this.idAgence = idAgence;
     }
 
-    public int getIdGerant() {
+    public long getIdGerant() {
         return idGerant;
     }
 
-    public void setIdGerant(int idGerant) {
+    public void setIdGerant(long idGerant) {
         this.idGerant = idGerant;
     }
 
-    public Agence getAgence() {
-        return agence;
+    public long getIdAgence() {
+        return idAgence;
     }
 
-    public void setAgence(Agence agence) {
-        this.agence = agence;
+    public void setIdAgence(long idAgence) {
+        this.idAgence = idAgence;
     }
 }

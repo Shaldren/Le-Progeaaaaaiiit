@@ -9,18 +9,22 @@ import android.os.Parcelable;
 public class Client extends Personne implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
-    private int idClient;
+    private long idClient;
+    private long idVoiture;
 
     public Client() {
     }
 
-    public Client(int id, String nom, String prenom, String adresse, String ville, int codePostal, int idClient) {
+    public Client(long id, String nom, String prenom, String adresse, String ville, String codePostal, long idClient, long idVoiture) {
         super(id, nom, prenom, adresse, ville, codePostal);
         this.idClient = idClient;
+        this.idVoiture = idVoiture;
     }
 
     protected Client(Parcel in) {
-        idClient = in.readInt();
+        idClient = in.readLong();
+        idVoiture = in.readLong();
+
     }
 
     public static final Creator<Client> CREATOR = new Creator<Client>() {
@@ -35,12 +39,20 @@ public class Client extends Personne implements Parcelable {
         }
     };
 
-    public int getIdClient() {
+    public long getIdClient() {
         return idClient;
     }
 
-    public void setIdClient(int idClient) {
+    public void setIdClient(long idClient) {
         this.idClient = idClient;
+    }
+
+    public long getIdVoiture() {
+        return idVoiture;
+    }
+
+    public void setIdVoiture(long idVoiture) {
+        this.idVoiture = idVoiture;
     }
 
     @Override
@@ -50,6 +62,7 @@ public class Client extends Personne implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(idClient);
+        dest.writeLong(idClient);
+        dest.writeLong(idVoiture);
     }
 }

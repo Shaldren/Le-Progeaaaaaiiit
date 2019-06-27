@@ -5,17 +5,17 @@ import android.os.Parcelable;
 
 public class Personne {
 
-    private int id;
+    private long id;
     private String nom;
     private String prenom;
     private String adresse;
     private String ville;
-    private int codePostal;
+    private String codePostal;
 
     public Personne() {
     }
 
-    public Personne(int id, String nom, String prenom, String adresse, String ville, int codePostal) {
+    public Personne(long id, String nom, String prenom, String adresse, String ville, String codePostal) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -36,11 +36,11 @@ public class Personne {
                 '}';
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -76,11 +76,11 @@ public class Personne {
         this.ville = ville;
     }
 
-    public int getCodePostal() {
+    public String getCodePostal() {
         return codePostal;
     }
 
-    public void setCodePostal(int codePostal) {
+    public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
     }
 }
