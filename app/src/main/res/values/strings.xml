@@ -25,6 +25,12 @@
     <string name="label_picture">Image :</string>
     <string name="hint_picture">Image</string>
 
+    <string name="label_idConnexion">ID Utilisateur :</string>
+    <string name="hint_idConnexion">ID Utilisateur</string>
+
+    <string name="label_mdp">Mot de passe :</string>
+    <string name="hint_mdp">Mot de Passe</string>
+
     <string name="exception_vehicule_form_get">STFU</string>
     <string name="msg_update_vehicule">Mise à jour du véhicule</string>
 
