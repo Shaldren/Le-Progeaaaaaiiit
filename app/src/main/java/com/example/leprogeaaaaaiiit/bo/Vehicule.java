@@ -21,6 +21,9 @@ public class Vehicule implements Parcelable
     private long idAgence;
     private boolean loue;
 
+    private static String[] typeStrings = new String[]{"citadine", "break","berline" };
+    private int type;
+
     public Vehicule() {
     }
 
@@ -185,6 +188,23 @@ public class Vehicule implements Parcelable
 
     public boolean isLoue() {
         return loue;
+    }
+
+    public static String[] getTypeStrings()
+    {
+        return typeStrings;
+    }
+
+    public static void setTypeStrings(String[] typeStrings) {
+        Vehicule.typeStrings = typeStrings;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public void setLoue(boolean loue) {

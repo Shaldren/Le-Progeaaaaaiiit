@@ -45,4 +45,12 @@
     <string name="nok">No U</string>
     <string name="title_alert_quit">Tu dégage ?</string>
     <string name="msg_alert_quit">T\'es sûr que tu veux dégager ?</string>
+
+    <string-array name="type_option">
+        <item>Citadine</item>
+        <item>Break</item>
+        <item>Berline</item>
+    </string-array>
+
+
 </resources>
