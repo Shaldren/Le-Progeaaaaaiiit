@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RatingBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -56,6 +57,7 @@ public class VehiculeDetailActivity extends AppCompatActivity {
         TextView modele = findViewById(R.id.txtModele);
         TextView prix = findViewById(R.id.txtPrix);
         TextView type = findViewById(R.id.txtType);
+        Switch loue = findViewById(R.id.switch1);
 
         marque.setText(vehicule.getMarque());
         modele.setText(vehicule.getModele());
@@ -63,6 +65,7 @@ public class VehiculeDetailActivity extends AppCompatActivity {
         prix.setText(String.valueOf(vehicule.getPrixParJour()));
 
         type.setText(vehicule.getTypeEnvironnement());
+        loue.setChecked(vehicule.isLoue());
     }
 
     @Override

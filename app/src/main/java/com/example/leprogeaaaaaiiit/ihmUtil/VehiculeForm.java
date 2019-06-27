@@ -8,6 +8,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import com.example.leprogeaaaaaiiit.R;
 import com.example.leprogeaaaaaiiit.VehiculeInsertActivity;
@@ -29,6 +30,7 @@ public class VehiculeForm {
     private EditText prixParJour;
     private EditText immatriculation;
     private ImageView image;
+    private Switch loue;
     private boolean isCheck = false;
     VehiculeManager vm;
 
@@ -41,6 +43,7 @@ public class VehiculeForm {
         prixParJour = activity.findViewById(R.id.edtPrix);
         immatriculation = activity.findViewById(R.id.edtMatricul);
         image = activity.findViewById(R.id.imageView);
+        loue = activity.findViewById(R.id.switch1);
         vm = new VehiculeManager(activity);
     }
 
@@ -50,6 +53,7 @@ public class VehiculeForm {
         type.setText(vehicule.getTypeEnvironnement());
         prixParJour.setText(String.valueOf(vehicule.getPrixParJour()));
         immatriculation.setText(vehicule.getImmatriculation());
+        loue.setChecked(vehicule.isLoue());
 
     }
 
@@ -89,6 +93,7 @@ public class VehiculeForm {
         this.vehicule.setImmatriculation(immatriculation.getText().toString());
         this.vehicule.setTypeEnvironnement(type.getText().toString());
         this.vehicule.setImage(image.toString());
+        this.vehicule.setLoue(loue.isChecked());
 
         return this.vehicule;
     }

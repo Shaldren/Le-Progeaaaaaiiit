@@ -19,6 +19,7 @@ public class Vehicule implements Parcelable
     private String immatriculation;
     private String image;
     private long idAgence;
+    private boolean loue;
 
     public Vehicule() {
     }
@@ -33,7 +34,7 @@ public class Vehicule implements Parcelable
      * @param image
      */
     @Ignore
-    public Vehicule(String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image, long idAgence) {
+    public Vehicule(String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image, long idAgence, boolean loue) {
         this.typeEnvironnement = typeEnvironnement;
         this.marque = marque;
         this.modele = modele;
@@ -41,6 +42,7 @@ public class Vehicule implements Parcelable
         this.immatriculation = immatriculation;
         this.image = image;
         this.idAgence = idAgence;
+        this.loue = loue;
     }
 
     /**
@@ -54,21 +56,40 @@ public class Vehicule implements Parcelable
      * @param image
      */
     @Ignore
-    public Vehicule(long id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image, long idAgence) {
-        this(typeEnvironnement,marque,modele,prixParJour,immatriculation,image,idAgence);
+    public Vehicule(long id, String typeEnvironnement, String marque, String modele, double prixParJour, String immatriculation, String image, long idAgence, boolean loue) {
+        this(typeEnvironnement,marque,modele,prixParJour,immatriculation,image,idAgence,loue);
         this.id = id;
     }
 
-    @Ignore
-    public Vehicule(Parcel in) {
+
+    protected Vehicule(Parcel in) {
         id = in.readLong();
         typeEnvironnement = in.readString();
         marque = in.readString();
         modele = in.readString();
-        prixParJour = in.readLong();
+        prixParJour = in.readDouble();
         immatriculation = in.readString();
         image = in.readString();
         idAgence = in.readLong();
+        loue = in.readByte() != 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(typeEnvironnement);
+        dest.writeString(marque);
+        dest.writeString(modele);
+        dest.writeDouble(prixParJour);
+        dest.writeString(immatriculation);
+        dest.writeString(image);
+        dest.writeLong(idAgence);
+        dest.writeByte((byte) (loue ? 1 : 0));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Vehicule> CREATOR = new Creator<Vehicule>() {
@@ -94,6 +115,7 @@ public class Vehicule implements Parcelable
                 ", immatriculation='" + immatriculation + '\'' +
                 ", image='" + image + '\'' +
                 ", agence='" + idAgence + '\'' +
+                ", loue='" + loue + '\'' +
                 '}';
     }
 
@@ -161,20 +183,11 @@ public class Vehicule implements Parcelable
         this.idAgence = idAgence;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public boolean isLoue() {
+        return loue;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(id);
-        dest.writeString(marque);
-        dest.writeString(modele);
-        dest.writeString(typeEnvironnement);
-        dest.writeString(immatriculation);
-        dest.writeDouble(prixParJour);
-        dest.writeString(image);
-        dest.writeLong(idAgence);
+    public void setLoue(boolean loue) {
+        this.loue = loue;
     }
 }
